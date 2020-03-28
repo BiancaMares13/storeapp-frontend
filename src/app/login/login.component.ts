@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  message:string;
+  constructor() {
+   this.message="initial"}
+
 
   ngOnInit(): void {
   }
-
+    doThis():void{
+    debugger
+    this.message="am schimbat valoarea";
+}
 }
