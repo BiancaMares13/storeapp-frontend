@@ -1,0 +1,48 @@
+.header{
+  background-color: teal;
+  color:white;
+  height: 40px;
+}
+.shoppingCart{
+  position: absolute;
+  right: 10px;
+}
+.profile{
+  position: absolute;
+  right: 150px;
+}
+.footer{
+  background-color: teal;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color:white;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+

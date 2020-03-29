@@ -1,0 +1,26 @@
+
+.parent{
+  padding-top: 30px;
+}
+.child {
+  display: inline-block;
+  margin: 5px;
+  max-width: 250px;
+  float: left;
+}
+.price {
+  color:red;
+  font-size: large;
+  align-content: center;
+}
+
+.chip{
+  background-color: teal;
+  color: white;
+  padding:5px;
+  border-radius: 20px;
+}
+
+.title{
+  font-weight: bold;
+}
