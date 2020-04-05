@@ -14,19 +14,12 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatChipsModule} from "@angular/material/chips";
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import {MatSidenavModule} from "@angular/material/sidenav";
-import {MatTabsModule} from "@angular/material/tabs";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    LoginComponent,
-    ProductDetailsComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -38,12 +31,7 @@ import {FormsModule} from "@angular/forms";
     MatIconModule,
     MatMenuModule,
     MatDividerModule,
-    MatChipsModule,
-    MatSidenavModule,
-    MatTabsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule
+    MatChipsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
