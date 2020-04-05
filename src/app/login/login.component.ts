@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.userService.login(this.userCredentials).subscribe(resp=>{ this.router.navigate([URLs.FRONT_LOGIN_PAGE]);}, error => {this.errorMessage=error.error.message;})
+    this.userService.login(this.userCredentials).subscribe(resp=>{ this.router.navigate([URLs.FRONT_PRODUCTS_PAGE]);}, error => {this.errorMessage=error.error.message;})
 
   }
 

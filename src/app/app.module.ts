@@ -14,6 +14,11 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatChipsModule} from "@angular/material/chips";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 @NgModule({
   declarations: [
@@ -27,11 +32,16 @@ import {MatChipsModule} from "@angular/material/chips";
     BrowserAnimationsModule,
     MatCardModule,
     HttpClientModule,
-    MatButtonModule,
     MatIconModule,
     MatMenuModule,
     MatDividerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSidenavModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

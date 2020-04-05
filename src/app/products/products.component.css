@@ -24,3 +24,22 @@
 .title{
   font-weight: bold;
 }
+
+.main-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.sideMenu {
+  background-color: teal;
+  color: white;
+  width: 150px;
+  height:100%;
+  padding-top: 30px;
+  top: 2%;
+}
+.mat-button:hover{
+  background-color: #125688;
+}

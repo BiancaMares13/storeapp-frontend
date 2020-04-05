@@ -7,6 +7,7 @@ export class URLs {
   static LOGIN_URL = URLs.BASE_URL + "/users/login";
   static SIGN_UP = URLs.BASE_URL + "/users/addUser";
   static FRONT_LOGIN_PAGE = 'login';
+  static FRONT_PRODUCTS_PAGE= 'products';
 
 
 
