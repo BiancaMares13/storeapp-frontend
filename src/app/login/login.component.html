@@ -1,5 +1,90 @@
-<p>login works!</p>
-<h1 >{{message}}</h1>
-<div>
+<div class="mainComponent">
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      Log in
+    </ng-template>
+      <mat-form-field class="example-full-width">
+        <mat-label>Username </mat-label>
+        <input matInput placeholder="Username"  [(ngModel)]="userCredentials.username"/>
+      </mat-form-field>
+<br/>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password"  type="password"  [(ngModel)]="userCredentials.password" >
+      </mat-form-field>
+    <br/>
+    <button mat-button (click)="login()" class="buttonLogin" >Login</button>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      Sign up
+    </ng-template>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Name </mat-label>
+        <label>
+          <input matInput placeholder="Name" [(ngModel)]="user.name"/>
+        </label>
+      </mat-form-field>
+        <br/>
+
+      <mat-form-field class="example-full-width">
+      <mat-label>Surname </mat-label>
+      <label>
+        <input matInput placeholder="Surname" [(ngModel)]="user.surname"/>
+      </label>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Username </mat-label>
+        <label>
+          <input matInput placeholder="Username" [(ngModel)]="user.username"/>
+        </label>
+      </mat-form-field>
+        <br/>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password </mat-label>
+        <label>
+          <input matInput placeholder="Password" [(ngModel)]="user.password" type="password"/>
+        </label>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Address </mat-label>
+        <label>
+          <input matInput placeholder="Address" [(ngModel)]="user.adress" />
+        </label>
+
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone </mat-label>
+        <label>
+          <input matInput placeholder="Phone"  [(ngModel)]="user.phoneNumber"/>
+        </label>
+
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email </mat-label>
+        <label>
+          <input matInput placeholder="Email"  [(ngModel)]="user.email"/>
+        </label>
+
+      </mat-form-field>
+      <br/>
+      <button mat-button (click)="signUp()" class="buttonLogin" >Sign up</button>
+
+
+
+  </mat-tab>
+
+</mat-tab-group>
 </div>
-<div class="myfirstClass">  <button type="button" (click)="doThis()">click </button></div>

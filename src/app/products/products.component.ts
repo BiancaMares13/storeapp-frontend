@@ -10,6 +10,7 @@ import {ProductService} from "../service/product.service";
 export class ProductsComponent implements OnInit {
 
  products: Product[];
+ isFilterActive: boolean=false
   constructor(private productService: ProductService) {
    this.products = [];}
 
@@ -20,4 +21,16 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  findProductByCategory(selectedCategory: string){
+  this.isFilterActive=true;
+  this.productService.getAllProductsByCategory(selectedCategory).subscribe(resp=>{this.products = resp;});
+
+  }
+
+  disableFilter(){
+   this.isFilterActive=false;
+    this.productService.getAllProducts().subscribe(resp=>{
+      this.products=resp;
+    });
+  }
 }
