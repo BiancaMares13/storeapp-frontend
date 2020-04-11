@@ -37,7 +37,8 @@
   color: white;
   width: 120px;
   height:100%;
-  padding-top: 10px;
+  top:1px;
+  padding-top: 35px;
 }
 .sideMenu-content{
   position: fixed;

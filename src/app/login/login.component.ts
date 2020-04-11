@@ -4,6 +4,7 @@ import {User} from "../model/User";
 import {UserService} from "../service/user.service";
 import {URLs} from "../util/URLs";
 import {Router} from "@angular/router";
+import {Constants} from "../util/Constants";
 
 @Component({
   selector: 'app-login',
@@ -23,11 +24,17 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.userService.login(this.userCredentials).subscribe(resp=>{ this.router.navigate([URLs.FRONT_PRODUCTS_PAGE]);}, error => {this.errorMessage=error.error.message;})
+    debugger
+    this.userService.login(this.userCredentials).subscribe(resp=>{
+        localStorage.setItem(Constants.USERNAME_SESSION_KEY,resp.username);
+        localStorage.setItem(Constants.ID_SESSION_KEY,String(resp.id));
+        localStorage.setItem(Constants.SURNAME_SESSION_KEY, resp.surname);
+    this.router.navigate([URLs.FRONT_PRODUCTS_PAGE]);},
+        error => {this.errorMessage=error.error.message;})
 
   }
 
   signUp() {
-this.userService.addUser(this.user).subscribe(resp=>{location.reload();})
+  this.userService.addUser(this.user).subscribe(resp=>{location.reload();})
   }
 }

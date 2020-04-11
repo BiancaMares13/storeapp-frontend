@@ -1,0 +1,29 @@
+<div class="header">Hey {{user.surname}}! Fill in only the data you want updated.</div>
+<div class="div-content">
+<mat-form-field class="example-full-width">
+  <mat-label>Address </mat-label>
+  <input matInput  [(ngModel)]="user.adress" />
+  <mat-icon matSuffix>house</mat-icon>
+  <mat-hint>Set here your new address</mat-hint>
+</mat-form-field>
+<br/>
+
+<mat-form-field class="example-full-width">
+  <mat-label>Phone </mat-label>
+  <input matInput  style="width: 300px;" [(ngModel)]="user.phoneNumber"/>
+  <mat-icon matSuffix>perm_phone_msg</mat-icon>
+  <mat-hint>Set here your phone number</mat-hint>
+</mat-form-field>
+<br/>
+
+<mat-form-field class="example-full-width">
+  <mat-label>Email </mat-label>
+  <input matInput  [(ngModel)]="user.email"/>
+  <mat-icon matSuffix>email</mat-icon>
+  <mat-hint>Set here your email address</mat-hint>
+
+</mat-form-field>
+<br/>
+<button mat-button (click)="updateProfile()" style="margin-top:20px; width:200px">Update</button>
+</div>
+<div *ngIf="message.length>0" class="alert alert-danger" style="margin-top: 50px">{{message}}</div>

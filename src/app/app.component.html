@@ -1,16 +1,18 @@
 <div class="header">
   <button mat-button><span class="material-icons">home</span>Home</button>
-  <button mat-button [matMenuTriggerFor]="menu" class="profile" ><span class="material-icons">face</span>Profile</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Change Profile Settings</button>
-  <button mat-menu-item>View orders</button>
-  <button mat-menu-item>View favorites</button>
-</mat-menu>
+  <button mat-button [matMenuTriggerFor]="menu" class="profile" *ngIf="isUserLogged"><span class="material-icons">face</span>Profile</button>
+  <button mat-button  class="profile" *ngIf="!isUserLogged" (click)="redirectToLogin()" ><span class="material-icons">person_outline</span>Log in</button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openModalUpdateProfile()">Change Profile</button>
+    <button mat-menu-item>View orders</button>
+    <button mat-menu-item>View favorites</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
+
+  </mat-menu>
   <button mat-button class="shoppingCart" > <span class="material-icons">shopping_cart</span>Shopping Cart</button>
 
 </div>
-<mat-divider></mat-divider>
-
 <router-outlet></router-outlet>
 <div class="footer">
   <a href="https://www.facebook.com/fractalwoodstories" class="fa fa-facebook"></a>

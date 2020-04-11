@@ -19,12 +19,15 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    LoginComponent
+    LoginComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     HttpClientModule,
     MatIconModule,
     MatMenuModule,
+    MatDialogModule,
     MatDividerModule,
     MatChipsModule,
     MatTabsModule,

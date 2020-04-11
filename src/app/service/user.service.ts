@@ -21,6 +21,15 @@ export class UserService {
   }
   login(userCredentials: UserCredentials) {
     userCredentials.password=sha256(userCredentials.password);
-    return this.http.post<UserCredentials>(URLs.LOGIN_URL, userCredentials, this.httpOptions);
+    return this.http.post<User>(URLs.LOGIN_URL, userCredentials, this.httpOptions);
+  }
+  updateUser(user: User) {
+    return this.http.post<User>(URLs.UPDATE_USER, user, this.httpOptions);
+  }
+
+
+  getUserById(id: number) {
+    return this.http.get<User>(URLs.USER_By_ID+id, this.httpOptions);
+
   }
 }
