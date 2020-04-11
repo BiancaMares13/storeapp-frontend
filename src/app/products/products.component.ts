@@ -10,14 +10,20 @@ import {ProductService} from "../service/product.service";
 export class ProductsComponent implements OnInit {
 
  products: Product[];
+ categories: String[];
  isFilterActive: boolean=false
   constructor(private productService: ProductService) {
-   this.products = [];}
+   this.products = [];
+   this.categories=[];
+ }
 
   ngOnInit(): void {
 
     this.productService.getAllProducts().subscribe(resp=>{
       this.products=resp;
+    });
+    this.productService.getAllCategories().subscribe(resp=>{
+      this.categories=resp;
     });
   }
 

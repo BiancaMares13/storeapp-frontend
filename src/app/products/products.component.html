@@ -1,8 +1,15 @@
 <mat-drawer-container >
   <mat-drawer mode="side" opened class="sideMenu">
+    <div class="sideMenu-content">
     <b> Categories</b>
     <br/>
+      <hr>
+    <div *ngFor="let productCategory of categories">
+    <button mat-button (click)="findProductByCategory(productCategory)">{{productCategory}}</button>
+        <hr>
+    </div>
     <button mat-button (click)="disableFilter()" *ngIf="isFilterActive" >Reset filter</button>
+    </div>
   </mat-drawer>
   <mat-drawer-content style="padding-right: 50px;">
   <div class="parent">

@@ -35,11 +35,22 @@
 .sideMenu {
   background-color: teal;
   color: white;
-  width: 150px;
+  width: 120px;
   height:100%;
-  padding-top: 30px;
-  top: 2%;
+  padding-top: 10px;
+}
+.sideMenu-content{
+  position: fixed;
+  color: white;
+  background-color: teal;
+
+
 }
 .mat-button:hover{
   background-color: #125688;
+}
+hr {
+  display: block;
+  border-style: inset;
+  border-width: 1px;
 }
