@@ -16,6 +16,7 @@ export class URLs {
 
   static FRONT_LOGIN_PAGE = 'login';
   static FRONT_PRODUCTS_PAGE= 'products';
+  public static VIEW_PRODUCT_PAGE = 'products/:id';
 
 
 

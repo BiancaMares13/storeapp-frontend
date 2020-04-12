@@ -1,1 +1,13 @@
-<p>product-details works!</p>
+<mat-card><mat-card-header>
+<mat-card-title> {{product.productName}}</mat-card-title>
+  <mat-card-subtitle>{{product.productCategory}}</mat-card-subtitle>
+</mat-card-header>
+  <mat-card-content>
+<div class="gallery" matTooltip="Click image to zoom" >
+  <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+</div>
+    <br/>
+    <p class="description">{{product.productDescription}}</p>
+    <p class="price"> {{product.productPrice}} RON</p>
+  </mat-card-content>
+</mat-card>

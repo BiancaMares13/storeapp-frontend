@@ -1,0 +1,14 @@
+.gallery{
+  margin-top:50px;
+}
+.price {
+  color:red;
+  font-size: large;
+  align-content: center;
+}
+.description{
+  margin-top: 10px;
+  font-size: large;
+  font-style: italic;
+}
+

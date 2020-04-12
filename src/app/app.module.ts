@@ -20,14 +20,18 @@ import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
-import {MatDialogModule} from "@angular/material/dialog";
+import {MatDialogConfig, MatDialogModule} from "@angular/material/dialog";
+import {ProductDetailsComponent} from "./product-details/product-details.component";
+import {NgxGalleryModule} from "ngx-gallery";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     LoginComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +49,12 @@ import {MatDialogModule} from "@angular/material/dialog";
     FormsModule,
     MatButtonModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    NgxGalleryModule,
+    MatTooltipModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, MatDialogConfig],
+  entryComponents: [ProductDetailsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

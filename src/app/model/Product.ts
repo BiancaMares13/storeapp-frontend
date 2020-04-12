@@ -5,4 +5,5 @@ export class Product {
   productPrice: number;
   productCategory: string;
   productPhotoLink: string;
+  imageList: string[];
 }
