@@ -1,0 +1,66 @@
+<div class="header">Add a new  product</div>
+<div class="div-content">
+<mat-form-field class="example-full-width">
+  <mat-label>Product name </mat-label>
+  <label>
+    <input matInput placeholder="Name" [(ngModel)]="product.productName"/>
+  </label>
+</mat-form-field>
+<br/>
+<mat-form-field class="example-full-width">
+  <mat-label>Product Description </mat-label>
+  <label>
+    <textarea matInput placeholder="Description" [(ngModel)]="product.productDescription" style="width:400px;"></textarea>
+  </label>
+</mat-form-field>
+<br/>
+<mat-form-field class="example-full-width">
+  <mat-label>Product price </mat-label>
+  <label>
+    <input type="number" matInput placeholder="Price" [(ngModel)]="product.productPrice" min="0" style="width:400px;"/>
+  </label>
+</mat-form-field>
+<br/>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Product stock </mat-label>
+    <label>
+      <input type="number" matInput placeholder="Stock" [(ngModel)]="product.productStock" min="0" style="width:400px;"/>
+    </label>
+  </mat-form-field>
+  <br/>
+
+<mat-form-field class="example-full-width">
+  <mat-label>Product category </mat-label>
+  <label>
+    <input  matInput placeholder="Category" [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="product.productCategory"/>
+  </label>
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredCategories | async" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+<br/>
+
+<mat-form-field class="example-full-width">
+  <mat-label>Display photo </mat-label>
+  <label>
+    <input matInput placeholder="Photo link" [(ngModel)]="product.productPhotoLink"/>
+  </label>
+</mat-form-field>
+  <br/>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Other photos </mat-label>
+    <label>
+      <textarea matInput rows="7" placeholder="Photos" [(ngModel)]="links"  style="width:400px;"></textarea>
+    </label>
+    <mat-hint align="end">Add other links to photos, separated by space.</mat-hint>
+  </mat-form-field>
+<br/>
+<button mat-button (click)="addProduct()" class="buttonAdd" >Add product</button>
+</div>
+
+<div *ngIf="message.length>0" class="alert alert-info" style="margin-top: 50px">{{message}}</div>
+<div *ngIf="errorMessage.length>0" class="alert alert-danger" style="margin-top: 50px">{{errorMessage}}</div>

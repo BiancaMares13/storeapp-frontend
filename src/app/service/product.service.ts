@@ -3,6 +3,7 @@ import {Product} from "../model/Product";
 import {URLs} from "../util/URLs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, of} from "rxjs";
+import {User} from "../model/User";
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,10 @@ export class ProductService {
 
   getAllProductsByCategory(category: string): Observable<Product[]>{
     return this.httpClient.get<Product[]>(URLs.ALL_PRODUCTS_BY_CATEGORY+category, this.httpOptions);
+  }
+
+  addProduct(product: Product) {
+    return this.httpClient.post<Product>(URLs.ADD_PRODUCT, product, this.httpOptions);
+
   }
 }

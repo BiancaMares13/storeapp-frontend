@@ -5,6 +5,8 @@ export class URLs {
   static ALL_PRODUCTS = URLs.BASE_URL + "/products/findAllProducts";
   static ALL_PRODUCTS_BY_CATEGORY = URLs.BASE_URL + "/products/findByProductCategory?productCategory=";
   static ALL_CATEGORY = URLs.BASE_URL + "/products/findAllCategories";
+  static ADD_PRODUCT = URLs.BASE_URL + "/products/addProduct";
+
 
 
   static UPDATE_USER=URLs.BASE_URL+'/users/updateUser';

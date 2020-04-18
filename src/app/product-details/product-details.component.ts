@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {Product} from "../model/Product";
 import {NgxGalleryImage, NgxGalleryOptions} from "ngx-gallery";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-product-details',
@@ -65,7 +66,6 @@ export class ProductDetailsComponent implements OnInit {
 
 
   ngOnInit(): void {
-
   }
 
 

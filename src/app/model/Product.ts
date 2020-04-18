@@ -6,4 +6,5 @@ export class Product {
   productCategory: string;
   productPhotoLink: string;
   imageList: string[];
+  productStock:number;
 }
