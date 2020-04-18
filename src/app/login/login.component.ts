@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem(Constants.USERNAME_SESSION_KEY,resp.username);
         localStorage.setItem(Constants.ID_SESSION_KEY,String(resp.id));
         localStorage.setItem(Constants.SURNAME_SESSION_KEY, resp.surname);
+        localStorage.setItem(Constants.ROLE_SESSION_KEY, resp.userRole);
     this.router.navigate([URLs.FRONT_PRODUCTS_PAGE]);},
         error => {this.errorMessage=error.error.message;})
 

@@ -1,7 +1,14 @@
 <div class="header">
   <button mat-button><span class="material-icons">home</span>Home</button>
+
+  <button mat-button [matMenuTriggerFor]="menuAdmin" class="admin" *ngIf="isUserAdmin"><span class="material-icons">face</span>Admin dashboard</button>
   <button mat-button [matMenuTriggerFor]="menu" class="profile" *ngIf="isUserLogged"><span class="material-icons">face</span>Profile</button>
   <button mat-button  class="profile" *ngIf="!isUserLogged" (click)="redirectToLogin()" ><span class="material-icons">person_outline</span>Log in</button>
+
+  <mat-menu #menuAdmin="matMenu">
+    <button mat-menu-item (click)="addProduct()">Add Product</button>
+    <button mat-menu-item (click)="updateProduct()">Update existing product</button>
+  </mat-menu>
 
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="openModalUpdateProfile()">Change Profile</button>

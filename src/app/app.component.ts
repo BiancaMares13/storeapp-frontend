@@ -4,6 +4,7 @@ import {Constants} from "./util/Constants";
 import {UpdateProfileComponent} from "./update-profile/update-profile.component";
 import {MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
+import {AddProductComponent} from "./add-product/add-product.component";
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,13 @@ import {Router} from "@angular/router";
 export class AppComponent {
   title = 'woodstories-front';
   isUserLogged: boolean;
+  isUserAdmin: boolean= false;
 
   constructor( private router: Router,
               private dialog: MatDialog){
     this.isUserLogged=localStorage.getItem(Constants.USERNAME_SESSION_KEY)!=null;
+    this.isUserAdmin=localStorage.getItem(Constants.ROLE_SESSION_KEY)=='ROLE_ADMIN';
+
   }
   redirectToLogin() {
     this.isUserLogged=false;
@@ -36,6 +40,17 @@ export class AppComponent {
       height: '60%',
       width: '500px'
     });
+
+  }
+
+  addProduct() {
+    this.dialog.open(AddProductComponent, {
+      height: '90%',
+      width: '650px'
+    });
+  }
+
+  updateProduct() {
 
   }
 }

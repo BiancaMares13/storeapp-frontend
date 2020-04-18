@@ -7,6 +7,10 @@
   position: absolute;
   right: 10px;
 }
+.admin{
+  position: absolute;
+  right: 240px;
+}
 .profile{
   position: absolute;
   right: 150px;

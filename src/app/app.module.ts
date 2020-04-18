@@ -16,7 +16,7 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
@@ -24,6 +24,8 @@ import {MatDialogConfig, MatDialogModule} from "@angular/material/dialog";
 import {ProductDetailsComponent} from "./product-details/product-details.component";
 import {NgxGalleryModule} from "ngx-gallery";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { AddProductComponent } from './add-product/add-product.component';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     ProductsComponent,
     LoginComponent,
     UpdateProfileComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -51,10 +54,12 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     MatInputModule,
     MatSidenavModule,
     NgxGalleryModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   providers: [ProductService, MatDialogConfig],
-  entryComponents: [ProductDetailsComponent],
+  entryComponents: [ProductDetailsComponent, UpdateProfileComponent, AddProductComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
