@@ -1,0 +1,14 @@
+<mat-list>
+  <div mat-subheader>Favorite products</div>
+
+  <mat-list-item *ngFor="let product of products" >
+      <div mat-line (click)="openModalProduct(product)">
+        <img src="{{product.productPhotoLink}}" alt="Avatar" class="avatar"> {{product.productName}}
+       <div mat-line> {{product.productDescription}} </div>
+      </div>
+<div class="button">
+    <button mat-button (click)="removeFromFavs(product)" ><span class="material-icons">delete</span></button>
+</div>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>

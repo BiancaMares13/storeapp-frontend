@@ -5,6 +5,7 @@ import {UpdateProfileComponent} from "./update-profile/update-profile.component"
 import {MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 import {AddProductComponent} from "./add-product/add-product.component";
+import {FavoritesComponent} from "./favorites/favorites.component";
 
 @Component({
   selector: 'app-root',
@@ -49,6 +50,13 @@ export class AppComponent {
       width: '650px'
     });
   }
+  viewFavs() {
+    this.dialog.open(FavoritesComponent, {
+      height: '90%',
+      width: '650px'
+    });
+  }
+
 
   updateProduct() {
 

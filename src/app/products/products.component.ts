@@ -4,6 +4,7 @@ import {ProductService} from "../service/product.service";
 import {UpdateProfileComponent} from "../update-profile/update-profile.component";
 import {MatDialog} from "@angular/material/dialog";
 import {ProductDetailsComponent} from "../product-details/product-details.component";
+import {Constants} from "../util/Constants";
 
 @Component({
   selector: 'app-products',
@@ -31,8 +32,13 @@ export class ProductsComponent implements OnInit {
   }
 
   findProductByCategory(selectedCategory: string){
-  this.isFilterActive=true;
-  this.productService.getAllProductsByCategory(selectedCategory).subscribe(resp=>{this.products = resp;});
+    this.isFilterActive=true;
+    this.productService.getAllProductsByCategory(selectedCategory).subscribe(resp=>{this.products = resp;});
+
+  }
+  addProductToFav(product: Product){
+   let userId=localStorage.getItem(Constants.ID_SESSION_KEY);
+    this.productService.addToFav(userId, product).subscribe();
 
   }
 

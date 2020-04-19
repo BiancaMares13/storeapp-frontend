@@ -26,6 +26,8 @@ import {NgxGalleryModule} from "ngx-gallery";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { AddProductComponent } from './add-product/add-product.component';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import { FavoritesComponent } from './favorites/favorites.component';
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     LoginComponent,
     UpdateProfileComponent,
     ProductDetailsComponent,
-    AddProductComponent
+    AddProductComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
@@ -56,10 +59,11 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     NgxGalleryModule,
     MatTooltipModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule
   ],
   providers: [ProductService, MatDialogConfig],
-  entryComponents: [ProductDetailsComponent, UpdateProfileComponent, AddProductComponent],
+  entryComponents: [ProductDetailsComponent, UpdateProfileComponent, AddProductComponent, FavoritesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

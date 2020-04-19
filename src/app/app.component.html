@@ -13,7 +13,7 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="openModalUpdateProfile()">Change Profile</button>
     <button mat-menu-item>View orders</button>
-    <button mat-menu-item>View favorites</button>
+    <button mat-menu-item (click)="viewFavs()">View favorites</button>
     <button mat-menu-item (click)="logout()">Logout</button>
 
   </mat-menu>

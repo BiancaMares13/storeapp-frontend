@@ -4,6 +4,7 @@ import {User} from "../model/User";
 import {URLs} from "../util/URLs";
 import {UserCredentials} from "../model/UserCredentials";
 import {sha256} from "js-sha256";
+import {Product} from "../model/Product";
 
 @Injectable({
   providedIn: 'root'
@@ -27,9 +28,8 @@ export class UserService {
     return this.http.post<User>(URLs.UPDATE_USER, user, this.httpOptions);
   }
 
-
   getUserById(id: number) {
     return this.http.get<User>(URLs.USER_By_ID+id, this.httpOptions);
-
   }
+
 }

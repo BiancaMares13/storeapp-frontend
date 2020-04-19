@@ -15,6 +15,10 @@ const routes: Routes = [
     component: ProductsComponent
   },
   {
+    path: URLs.VIEW_PRODUCT_PAGE,
+    component: ProductDetailsComponent
+  },
+  {
     path: URLs.FRONT_PRODUCTS_PAGE,
     component: ProductsComponent
   }];

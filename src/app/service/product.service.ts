@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Product} from "../model/Product";
 import {URLs} from "../util/URLs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable, of} from "rxjs";
-import {User} from "../model/User";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +29,19 @@ export class ProductService {
 
   addProduct(product: Product) {
     return this.httpClient.post<Product>(URLs.ADD_PRODUCT, product, this.httpOptions);
+  }
+  addToFav(id: string, product:Product) {
+    return this.httpClient.post<Product>(URLs.ADD_PRODUCT_To_FAVORITES+id, product, this.httpOptions);
+
+  }
+  getFavorites(id: string): Observable<Product[]>{
+
+    return this.httpClient.get<Product[]>(URLs.VIEW_ALL_FAVORITES+id , this.httpOptions);
+
+  }
+
+  deleteFavorites(id: string, product: Product): Observable<Product[]>{
+    return this.httpClient.post<Product[]>(URLs.REMOVE_FAVS+id, product, this.httpOptions);
 
   }
 }
