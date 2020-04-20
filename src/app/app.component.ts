@@ -17,6 +17,7 @@ export class AppComponent {
   isUserLogged: boolean;
   isUserAdmin: boolean= false;
 
+
   constructor( private router: Router,
               private dialog: MatDialog){
     this.isUserLogged=localStorage.getItem(Constants.USERNAME_SESSION_KEY)!=null;
@@ -38,8 +39,8 @@ export class AppComponent {
 
   openModalUpdateProfile() {
     this.dialog.open(UpdateProfileComponent, {
-      height: '60%',
-      width: '500px'
+      height: '90%',
+      width: '600px'
     });
 
   }
@@ -57,8 +58,4 @@ export class AppComponent {
     });
   }
 
-
-  updateProduct() {
-
-  }
 }

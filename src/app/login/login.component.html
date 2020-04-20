@@ -82,6 +82,7 @@
       <br/>
       <button mat-button (click)="signUp()" class="buttonLogin" >Sign up</button>
 
+    <div *ngIf="errorMessage.length>0" class="alert alert-danger" style="margin-top: 50px">{{errorMessage}}</div>
 
 
   </mat-tab>

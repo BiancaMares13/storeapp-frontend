@@ -44,4 +44,9 @@ export class ProductService {
     return this.httpClient.post<Product[]>(URLs.REMOVE_FAVS+id, product, this.httpOptions);
 
   }
+
+  updateProduct(product: Product): Observable<Product[]> {
+    return this.httpClient.post<Product[]>(URLs.UPDATE_PRODUCT, product, this.httpOptions);
+
+  }
 }

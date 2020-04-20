@@ -19,7 +19,7 @@ export class FavoritesComponent implements OnInit {
 
   ngOnInit() {
     let id=localStorage.getItem(Constants.ID_SESSION_KEY);
-
+    debugger
     this.productService.getFavorites(id).subscribe(resp=>{this.products=resp;})
   }
 
@@ -33,7 +33,7 @@ export class FavoritesComponent implements OnInit {
 
   removeFromFavs(product:Product) {
     let id=localStorage.getItem(Constants.ID_SESSION_KEY);
-    debugger
+    this.ngOnInit();
     this.productService.deleteFavorites(id, product).subscribe(resp=>{this.products=resp;});
   }
 }

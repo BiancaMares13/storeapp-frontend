@@ -36,6 +36,6 @@ export class LoginComponent implements OnInit {
   }
 
   signUp() {
-  this.userService.addUser(this.user).subscribe(resp=>{location.reload();})
+  this.userService.addUser(this.user).subscribe(resp=>{location.reload();}, error => {this.errorMessage=error.error.message;})
   }
 }

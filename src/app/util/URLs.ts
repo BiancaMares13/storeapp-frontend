@@ -6,6 +6,8 @@ export class URLs {
   static ALL_PRODUCTS_BY_CATEGORY = URLs.BASE_URL + "/products/findByProductCategory?productCategory=";
   static ALL_CATEGORY = URLs.BASE_URL + "/products/findAllCategories";
   static ADD_PRODUCT = URLs.BASE_URL + "/products/addProduct";
+  static UPDATE_PRODUCT = URLs.BASE_URL + "/products/updateProduct";
+
   static ADD_PRODUCT_To_FAVORITES = URLs.BASE_URL + "/users/addFavorite/";
   static VIEW_ALL_FAVORITES = URLs.BASE_URL + "/users/getAllFavoritesProduts?id=";
   static REMOVE_FAVS = URLs.BASE_URL + "/users/removeFavorite/";
@@ -15,7 +17,7 @@ export class URLs {
   static USER_By_ID=URLs.BASE_URL+'/users/findByUserId?id=';
   static LOGIN_URL = URLs.BASE_URL + "/users/login";
   static SIGN_UP = URLs.BASE_URL + "/users/addUser";
-
+  static DELETE_USER=URLs.BASE_URL+'/users/';
 
 
   static FRONT_LOGIN_PAGE = 'login';

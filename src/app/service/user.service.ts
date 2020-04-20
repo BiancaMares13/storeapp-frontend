@@ -32,4 +32,8 @@ export class UserService {
     return this.http.get<User>(URLs.USER_By_ID+id, this.httpOptions);
   }
 
+  deleteUser(id: string) {
+    return this.http.delete<User>(URLs.DELETE_USER+id, this.httpOptions);
+
+  }
 }

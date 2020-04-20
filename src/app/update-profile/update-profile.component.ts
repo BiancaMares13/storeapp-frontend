@@ -14,8 +14,11 @@ export class UpdateProfileComponent implements OnInit {
   address: string='';
   phone:string='';
   mail:string='';
+  deleteProfileMessage: string;3
+
   constructor(private userService: UserService) {
     this.user=new User();
+    this.deleteProfileMessage='';
   }
 
 
@@ -36,4 +39,21 @@ export class UpdateProfileComponent implements OnInit {
     }
     this.userService.updateUser(this.user).subscribe(resp=>{location.reload()},error => {this.message=error.error.message});
   }
+
+  deleteProfileMessagePop() {
+    this.deleteProfileMessage='Are You sure you want to delete profile? This cannot be undone.'
+  }
+
+  delete() {
+    this.logout();
+    this.userService.deleteUser(localStorage.getItem(Constants.ID_SESSION_KEY)).subscribe();
+  }
+  logout() {
+    localStorage.removeItem(Constants.USERNAME_SESSION_KEY);
+    localStorage.removeItem(Constants.ID_SESSION_KEY);
+    localStorage.removeItem(Constants.SURNAME_SESSION_KEY);
+    location.reload();
+  }
+
+
 }

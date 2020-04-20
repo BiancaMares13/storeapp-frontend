@@ -59,7 +59,9 @@
     <mat-hint align="end">Add other links to photos, separated by space.</mat-hint>
   </mat-form-field>
 <br/>
-<button mat-button (click)="addProduct()" class="buttonAdd" >Add product</button>
+<button mat-button (click)="addProduct()" class="buttonAdd" *ngIf="isAddProd">Add product</button>
+  <button mat-button (click)="updateProduct()" class="buttonAdd" *ngIf="!isAddProd">Update product</button>
+
 </div>
 
 <div *ngIf="message.length>0" class="alert alert-info" style="margin-top: 50px">{{message}}</div>

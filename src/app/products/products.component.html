@@ -16,7 +16,9 @@
 <div *ngFor="let product of products" >
   <mat-card class="child">
     <mat-card-header>
-      <mat-card-title class="title">{{product.productName}}</mat-card-title>
+      <mat-card-title class="title" >{{product.productName}}
+        <button mat-button (click)="updateProduct(product)" *ngIf="isAdmin"><span class="material-icons">create</span></button>
+      </mat-card-title>
       <mat-card-subtitle>  <mat-chip-list ><mat-basic-chip class="chip"  (click)="findProductByCategory(product.productCategory)" selected>{{product.productCategory}}</mat-basic-chip></mat-chip-list></mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image  style="height:200px!important;width:250px!important;" src="{{product.productPhotoLink}}" alt="Photo of the product" (click)="openPopupProduct(product)">

@@ -5,6 +5,8 @@ import {UpdateProfileComponent} from "../update-profile/update-profile.component
 import {MatDialog} from "@angular/material/dialog";
 import {ProductDetailsComponent} from "../product-details/product-details.component";
 import {Constants} from "../util/Constants";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {AddProductComponent} from "../add-product/add-product.component";
 
 @Component({
   selector: 'app-products',
@@ -15,14 +17,19 @@ export class ProductsComponent implements OnInit {
 
  products: Product[];
  categories: String[];
- isFilterActive: boolean=false
-  constructor(private productService: ProductService,  private dialog: MatDialog) {
+ isFilterActive: boolean=false;
+ message: string;
+  isAdmin: boolean=false;
+  constructor(private productService: ProductService,  private dialog: MatDialog, private _snackBar: MatSnackBar) {
    this.products = [];
    this.categories=[];
+   this.message='';
+
  }
 
   ngOnInit(): void {
 
+    this.isAdmin=localStorage.getItem(Constants.ROLE_SESSION_KEY)=='ROLE_ADMIN';
     this.productService.getAllProducts().subscribe(resp=>{
       this.products=resp;
     });
@@ -38,8 +45,9 @@ export class ProductsComponent implements OnInit {
   }
   addProductToFav(product: Product){
    let userId=localStorage.getItem(Constants.ID_SESSION_KEY);
-    this.productService.addToFav(userId, product).subscribe();
+    this.productService.addToFav(userId, product).subscribe(resp=>{this.message='Added to favorites!'}, error =>{this.message=error.error.message;console.log(error)});
 
+    this.openSnackBar( 'Close');
   }
 
   disableFilter(){
@@ -49,15 +57,29 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+
+  openSnackBar(action: string) {
+    this._snackBar.open(this.message, action, {
+      duration: 2000,
+    });
+  }
+
   openPopupProduct(product: Product) {
 
     this.dialog.open(ProductDetailsComponent, {
       height: '80%',
       width: '800px',
-
       data : product
     });
 
 
+  }
+
+  updateProduct(product: Product) {
+    this.dialog.open(AddProductComponent, {
+      height: '90%',
+      width: '650px',
+      data : product
+    });
   }
 }
