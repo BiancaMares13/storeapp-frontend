@@ -7,6 +7,8 @@ export class URLs {
   static ALL_CATEGORY = URLs.BASE_URL + "/products/findAllCategories";
   static ADD_PRODUCT = URLs.BASE_URL + "/products/addProduct";
   static UPDATE_PRODUCT = URLs.BASE_URL + "/products/updateProduct";
+  static DELETE_PRODUCT = URLs.BASE_URL + "/products/";
+
 
   static ADD_PRODUCT_To_FAVORITES = URLs.BASE_URL + "/users/addFavorite/";
   static VIEW_ALL_FAVORITES = URLs.BASE_URL + "/users/getAllFavoritesProduts?id=";

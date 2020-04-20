@@ -44,8 +44,17 @@
   position: fixed;
   color: white;
   background-color: teal;
+}
+.buttonsAdmin{
+  width:30px;
+  height:30px;
+  padding:0;
+  background-color: white;
+  border:none;
 
-
+}
+.buttonsAdmin:hover{
+  background-color: #80d8d2;
 }
 .mat-button:hover{
   background-color: #80d8d2;

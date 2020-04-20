@@ -3,6 +3,7 @@ import {Product} from "../model/Product";
 import {URLs} from "../util/URLs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {User} from "../model/User";
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,11 @@ export class ProductService {
 
   updateProduct(product: Product): Observable<Product[]> {
     return this.httpClient.post<Product[]>(URLs.UPDATE_PRODUCT, product, this.httpOptions);
+
+  }
+
+  delete(id: number) {
+    return this.httpClient.delete<Product>(URLs.DELETE_PRODUCT+id, this.httpOptions);
 
   }
 }

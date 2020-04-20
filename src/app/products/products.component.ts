@@ -47,7 +47,7 @@ export class ProductsComponent implements OnInit {
    let userId=localStorage.getItem(Constants.ID_SESSION_KEY);
     this.productService.addToFav(userId, product).subscribe(resp=>{this.message='Added to favorites!'}, error =>{this.message=error.error.message;console.log(error)});
 
-    this.openSnackBar( 'Close');
+    this.openSnackBar( this.message,'Close');
   }
 
   disableFilter(){
@@ -58,8 +58,9 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  openSnackBar(action: string) {
-    this._snackBar.open(this.message, action, {
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
       duration: 2000,
     });
   }
@@ -82,4 +83,12 @@ export class ProductsComponent implements OnInit {
       data : product
     });
   }
+
+
+  deleteProduct(product: Product) {
+    this.productService.delete(product.id).subscribe(resp=>{this.message='Deleted!'}, error =>{this.message=error.error.message;});
+    location.reload();
+    this.openSnackBar( this.message,'Close');
+  }
+
 }

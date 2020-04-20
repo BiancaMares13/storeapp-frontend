@@ -17,7 +17,8 @@
   <mat-card class="child">
     <mat-card-header>
       <mat-card-title class="title" >{{product.productName}}
-        <button mat-button (click)="updateProduct(product)" *ngIf="isAdmin"><span class="material-icons">create</span></button>
+        <button  (click)="updateProduct(product)" *ngIf="isAdmin" class="buttonsAdmin" matTooltip="Edit"><span class="material-icons">create</span></button>
+        <button  (click)="deleteProduct(product)" *ngIf="isAdmin" class="buttonsAdmin" matTooltip="Delete"><span class="material-icons">delete_forever</span></button>
       </mat-card-title>
       <mat-card-subtitle>  <mat-chip-list ><mat-basic-chip class="chip"  (click)="findProductByCategory(product.productCategory)" selected>{{product.productCategory}}</mat-basic-chip></mat-chip-list></mat-card-subtitle>
     </mat-card-header>
