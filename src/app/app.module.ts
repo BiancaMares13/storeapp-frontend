@@ -29,6 +29,9 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {FavoritesComponent} from './favorites/favorites.component';
 import {MatListModule} from "@angular/material/list";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { OrdersComponent } from './orders/orders.component';
+import {MatExpansionModule} from "@angular/material/expansion";
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     UpdateProfileComponent,
     ProductDetailsComponent,
     AddProductComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    OrdersComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
@@ -62,10 +67,11 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatExpansionModule
   ],
   providers: [ProductService, MatDialogConfig],
-  entryComponents: [ProductDetailsComponent, UpdateProfileComponent, AddProductComponent, FavoritesComponent],
+  entryComponents: [ProductDetailsComponent, UpdateProfileComponent, AddProductComponent, FavoritesComponent,OrdersComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import {LoginComponent} from './login/login.component';
 import {ProductsComponent} from './products/products.component';
 import {URLs} from "./util/URLs";
 import {ProductDetailsComponent} from "./product-details/product-details.component";
+import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: URLs.VIEW_PRODUCT_PAGE,
     component: ProductDetailsComponent
+  },
+  {
+    path: URLs.SHOPPING_CART,
+    component: ShoppingCartComponent
   },
   {
     path: URLs.FRONT_PRODUCTS_PAGE,

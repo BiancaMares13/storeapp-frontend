@@ -21,10 +21,14 @@ export class URLs {
   static SIGN_UP = URLs.BASE_URL + "/users/addUser";
   static DELETE_USER=URLs.BASE_URL+'/users/';
 
+  static ALL_ORDERS= URLs.BASE_URL + "/orders/";
 
   static FRONT_LOGIN_PAGE = 'login';
   static FRONT_PRODUCTS_PAGE= 'products';
   public static VIEW_PRODUCT_PAGE = 'products/:id';
+  public static SHOPPING_CART = 'cart';
+
+
 
 
 

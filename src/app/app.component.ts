@@ -6,6 +6,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 import {AddProductComponent} from "./add-product/add-product.component";
 import {FavoritesComponent} from "./favorites/favorites.component";
+import {OrdersComponent} from "./orders/orders.component";
 
 @Component({
   selector: 'app-root',
@@ -58,4 +59,10 @@ export class AppComponent {
     });
   }
 
+  openViewOrders() {
+    this.dialog.open(OrdersComponent, {
+      height: '90%',
+      width: '850px'
+    });
+  }
 }

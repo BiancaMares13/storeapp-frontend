@@ -1,5 +1,5 @@
 <div class="header">
-  <button mat-button><span class="material-icons">home</span>Home</button>
+  <button mat-button routerLink="/products" ><span class="material-icons" >home</span>Home</button>
 
   <button mat-button [matMenuTriggerFor]="menuAdmin" class="admin" *ngIf="isUserAdmin"><span class="material-icons">face</span>Admin dashboard</button>
   <button mat-button [matMenuTriggerFor]="menu" class="profile" *ngIf="isUserLogged"><span class="material-icons">face</span>Profile</button>
@@ -11,12 +11,12 @@
 
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="openModalUpdateProfile()">Change Profile</button>
-    <button mat-menu-item>View orders</button>
+    <button mat-menu-item (click)="openViewOrders()">View orders</button>
     <button mat-menu-item (click)="viewFavs()">View favorites</button>
     <button mat-menu-item (click)="logout()">Logout</button>
 
   </mat-menu>
-  <button mat-button class="shoppingCart" > <span class="material-icons">shopping_cart</span>Shopping Cart</button>
+  <button mat-button class="shoppingCart"  routerLink="/cart" > <span class="material-icons">shopping_cart</span>Shopping Cart</button>
 
 </div>
 <router-outlet></router-outlet>
