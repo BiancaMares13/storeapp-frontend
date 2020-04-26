@@ -1,0 +1,29 @@
+<div *ngIf="error.length>0" class="alert alert-info" style="margin-top: 50px">{{error}}</div>
+<div class="orderDiv" *ngFor="let order of orders">
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Order from : {{order.completedOn}}
+    </mat-panel-title>
+    <mat-panel-description>
+Is with status: {{order.status}} and total amount to pay {{order.total}} RON
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+      <div mat-subheader>Products</div>
+
+      <mat-card class="example-card" *ngFor="let product of order.productList" (click)="openModalProduct(product)">
+        <mat-card-header>
+           <img mat-card-avatar src="{{product.productPhotoLink}}"  alt="Product photo">
+          <mat-card-title>{{product.productName}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+             {{product.productDescription}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+  </mat-expansion-panel>
+
+</div>
