@@ -4,7 +4,8 @@
     <ng-template mat-tab-label>
       Log in
     </ng-template>
-      <mat-form-field class="example-full-width">
+    <div *ngIf="errorMessageLogin.length>0" class="alert alert-danger" style="margin-top: 50px">{{errorMessageLogin}}</div>
+    <mat-form-field class="example-full-width">
         <mat-label>Username </mat-label>
         <input matInput placeholder="Username"  [(ngModel)]="userCredentials.username"/>
       </mat-form-field>
@@ -15,6 +16,7 @@
       </mat-form-field>
     <br/>
     <button mat-button (click)="login()" class="buttonLogin" >Login</button>
+
   </mat-tab>
 
   <mat-tab>

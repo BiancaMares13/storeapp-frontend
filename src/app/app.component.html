@@ -1,5 +1,5 @@
 <div class="header">
-  <button mat-button routerLink="/products" ><span class="material-icons" >home</span>Home</button>
+  <button mat-button routerLink="/products" *ngIf="isUserLogged"><span class="material-icons" >home</span>Home</button>
 
   <button mat-button [matMenuTriggerFor]="menuAdmin" class="admin" *ngIf="isUserAdmin"><span class="material-icons">face</span>Admin dashboard</button>
   <button mat-button [matMenuTriggerFor]="menu" class="profile" *ngIf="isUserLogged"><span class="material-icons">face</span>Profile</button>
@@ -16,12 +16,12 @@
     <button mat-menu-item (click)="logout()">Logout</button>
 
   </mat-menu>
-  <button mat-button class="shoppingCart"  routerLink="/cart" > <span class="material-icons">shopping_cart</span>Shopping Cart</button>
+  <button mat-button class="shoppingCart"  routerLink="/cart" *ngIf="isUserLogged"> <span class="material-icons">shopping_cart</span>Shopping Cart</button>
 
 </div>
 <router-outlet></router-outlet>
 <div class="footer">
   <a href="https://www.facebook.com/fractalwoodstories" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-instagram"></a>
+  <a href="https://www.facebook.com/fractalwoodstories" class="fa fa-instagram"></a>
 
 </div>

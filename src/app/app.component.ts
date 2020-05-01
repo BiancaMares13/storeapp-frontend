@@ -36,6 +36,7 @@ export class AppComponent {
     localStorage.removeItem(Constants.ID_SESSION_KEY);
     localStorage.removeItem(Constants.SURNAME_SESSION_KEY);
     location.reload();
+
   }
 
   openModalUpdateProfile() {

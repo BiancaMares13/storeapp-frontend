@@ -15,6 +15,7 @@ export class OrdersComponent implements OnInit {
 orders: Order[];
 error: string;
 panelOpenState = false;
+noOrderMessage: string='';
   constructor(private orderService: OrderService, private dialog: MatDialog) {
     this.orders=[];
   }
@@ -22,9 +23,11 @@ panelOpenState = false;
   ngOnInit() {
     this.error='';
     let id=localStorage.getItem(Constants.ID_SESSION_KEY);
+    this.orderService.getAllOrders(id).subscribe(resp=>{this.orders=resp;
+    if(this.orders.length==0){
+      this.noOrderMessage='No recent orders found';}
+    },err=>{this.error=err.error.message})
 
-    this.orderService.getAllOrders(id).subscribe(resp=>{this.orders=resp},err=>{this.error=err.error.message})
-    console.log(this.orders);
   }
 
   openModalProduct(product: Product) {

@@ -1,4 +1,4 @@
-<mat-list>
+<mat-list *ngIf="noProdMessage.length==0">
   <div mat-subheader>Favorite products</div>
 
   <mat-list-item *ngFor="let product of products" >
@@ -12,3 +12,7 @@
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-list>
+<div class="empty" *ngIf="noProdMessage.length>0">
+  {{noProdMessage}}
+
+</div>

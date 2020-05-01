@@ -13,6 +13,7 @@ import {MatDialog} from "@angular/material/dialog";
 export class FavoritesComponent implements OnInit {
 
   products: Product[];
+  noProdMessage:string='';
   constructor(private productService: ProductService,  private dialog: MatDialog) {
     this.products=[];
   }
@@ -20,7 +21,10 @@ export class FavoritesComponent implements OnInit {
   ngOnInit() {
     let id=localStorage.getItem(Constants.ID_SESSION_KEY);
     debugger
-    this.productService.getFavorites(id).subscribe(resp=>{this.products=resp;})
+    this.productService.getFavorites(id).subscribe(resp=>{this.products=resp;
+   debugger
+    if(this.products.length==0){
+      this.noProdMessage='No favorite product found';}})
   }
 
   openModalProduct(product: Product) {
@@ -34,6 +38,7 @@ export class FavoritesComponent implements OnInit {
   removeFromFavs(product:Product) {
     let id=localStorage.getItem(Constants.ID_SESSION_KEY);
     this.ngOnInit();
-    this.productService.deleteFavorites(id, product).subscribe(resp=>{this.products=resp;});
+    this.productService.deleteFavorites(id, product).subscribe(resp=>{this.products=resp;
+    });
   }
 }

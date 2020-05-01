@@ -47,13 +47,11 @@ export class ProductsComponent implements OnInit {
    let userId=localStorage.getItem(Constants.ID_SESSION_KEY);
     this.productService.addToFav(userId, product).subscribe(
       resp=>{
-        this.message='Added to favorites!';
+          this.message='Added to favorites!';
          this.openSnackBar( this.message,'Close');},
       error =>{
       this.message=error.error.message;
       this.openSnackBar( this.message,'Close')});
-
-    this.openSnackBar( this.message,'Close');
   }
 
   disableFilter(){
