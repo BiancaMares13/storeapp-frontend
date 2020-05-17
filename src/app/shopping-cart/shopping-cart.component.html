@@ -7,3 +7,22 @@ add_shopping_cart
 </span> Click here to return to products
  </button>
 </div>
+<div class="center">
+  <mat-list>
+    <div mat-subheader>Products</div>
+
+    <mat-list-item *ngFor="let product of order.productList" >
+      <div mat-line (click)="openModalProduct(product)">
+        <img src="{{product.productPhotoLink}}" alt="Avatar" class="avatar"> {{product.productName}}
+        <div mat-line> {{product.productDescription}} </div>
+      </div>
+      <div class="button">
+        <button mat-button (click)="removeFromCart(product)" matTooltip="Remove from cart"
+        ><span class="material-icons">delete</span></button>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+
+</div>
+<div *ngIf="errMessage.length>0" class="alert alert-danger" >{{errMessage}}</div>

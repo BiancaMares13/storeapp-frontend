@@ -7,6 +7,7 @@ import {ProductDetailsComponent} from "../product-details/product-details.compon
 import {Constants} from "../util/Constants";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AddProductComponent} from "../add-product/add-product.component";
+import {OrderService} from "../service/order.service";
 
 @Component({
   selector: 'app-products',
@@ -20,7 +21,7 @@ export class ProductsComponent implements OnInit {
  isFilterActive: boolean=false;
  message: string;
   isAdmin: boolean=false;
-  constructor(private productService: ProductService,  private dialog: MatDialog, private _snackBar: MatSnackBar) {
+  constructor(private productService: ProductService, private orderService:OrderService, private dialog: MatDialog, private _snackBar: MatSnackBar) {
    this.products = [];
    this.categories=[];
    this.message='';
@@ -52,6 +53,18 @@ export class ProductsComponent implements OnInit {
       error =>{
       this.message=error.error.message;
       this.openSnackBar( this.message,'Close')});
+  }
+
+  addToCart(prod: Product){
+    let userId=localStorage.getItem(Constants.ID_SESSION_KEY);
+    this.orderService.addProductToCart(userId,prod).subscribe(
+      resp=>{
+        this.message='Added to cart!';
+        this.openSnackBar( this.message,'Close');},
+      error =>{
+        this.message=error.error.message;
+        this.openSnackBar( this.message,'Close')});
+
   }
 
   disableFilter(){

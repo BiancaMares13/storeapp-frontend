@@ -20,7 +20,7 @@ const routes: Routes = [
     component: ProductDetailsComponent
   },
   {
-    path: URLs.SHOPPING_CART,
+    path: URLs.FRONT_SHOPPING_CART,
     component: ShoppingCartComponent
   },
   {

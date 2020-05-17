@@ -23,10 +23,17 @@ export class URLs {
 
   static ALL_ORDERS= URLs.BASE_URL + "/orders/";
 
+  static ADD_PRODUCT_TO_CART=URLs.ALL_ORDERS+'addProductToOrder/';
+  static REMOVE_PRODUCT_FROM_CART=URLs.ALL_ORDERS+'removeProductfromOrder/';
+  static SHOPPING_CART=URLs.ALL_ORDERS+'getShoppingCart/';
+
+
+
+
   static FRONT_LOGIN_PAGE = 'login';
   static FRONT_PRODUCTS_PAGE= 'products';
   public static VIEW_PRODUCT_PAGE = 'products/:id';
-  public static SHOPPING_CART = 'cart';
+  public static FRONT_SHOPPING_CART = 'cart';
 
 
 
